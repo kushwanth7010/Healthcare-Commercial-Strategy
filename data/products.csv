@@ -1,0 +1,7 @@
+product_id,therapy_area,list_price_inr,unit_cogs_inr
+CARD-A,Cardiology,950,410
+CARD-B,Cardiology,1240,510
+META-A,Metabolic,730,310
+META-B,Metabolic,1100,450
+RESP-A,Respiratory,850,390
+RESP-B,Respiratory,1050,450
