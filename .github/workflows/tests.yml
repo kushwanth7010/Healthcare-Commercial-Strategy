@@ -1,0 +1,17 @@
+name: Synthetic healthcare strategy checks
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m src.generate_data
+      - run: python -m src.analyze
+      - run: python -m src.build_sqlite
+      - run: python -m src.run_sql_queries
+      - run: python -m src.weight_sensitivity
+      - run: python -m unittest discover -s tests -v
